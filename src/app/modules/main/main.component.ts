@@ -6,17 +6,11 @@ import { AuthlogicService } from 'src/app/service/authlogic.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit{
-  @ViewChild('signout') signout!:ElementRef
+export class MainComponent{
   public userphoto:any;
   public username:any
   constructor(public router:Router, public logic:AuthlogicService){}
-  ngOnInit(): void {
-    this.userphoto=sessionStorage.getItem('photo')
-    console.log(this.userphoto)
-    this.username=sessionStorage.getItem('lastname')
-    console.log(this.username)
-  }
+
   onLogout(){
     this.logic.logout()
     this.router.navigate(['/'])

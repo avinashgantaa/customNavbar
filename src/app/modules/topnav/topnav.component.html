@@ -1,0 +1,36 @@
+<div class="topnav displaybetween">
+    <ng-content></ng-content>
+    <div ngbDropdown>
+        <button ngbDropdownToggle class="dropdownbutton displaybetween">
+            <img [src]="photo" alt="userphoto" class="userphoto">
+            <div>{{username}}</div>
+        </button>
+        <div ngbDropdownMenu>
+            <button ngbDropdownItem data-toggle="modal" data-target="#modalpopup">Logout</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade" id="modalpopup">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Are You sure, proceed to Logout</h2>
+        </div>
+        <div class="modal-body displaybetween">
+          <button
+            mat-raised-button
+            color="warn"
+            (click)="onLogout()"
+            data-dismiss="modal"
+          >
+            Logout
+          </button>
+          <button mat-raised-button color="primary" data-dismiss="modal">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -78,24 +78,7 @@
     </ul>
   </div>
   <div class="maincontent">
-    <div class="row g-0">
-      <div class="col">
-        <div class="topnav displaybetween">
-          <h2 class="m-0">Dashboard heading</h2>
-          <div ngbDropdown>
-            <button ngbDropdownToggle class="btn btn-light dropdownbutton" >
-              <img [src]="userphoto" alt="userphoto" class="userphoto">
-              <span>{{username}}</span>
-            </button>
-            <div ngbDropdownMenu>
-              <button ngbDropdownItem data-toggle="modal" data-target="#modalpopup">Logout</button>
-            </div>
-          </div>
-
-        </div>
-        <router-outlet></router-outlet>
-      </div>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>
 <div class="modal fade" id="modalpopup">

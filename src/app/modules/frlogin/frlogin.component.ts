@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { canvasToBlob } from 'blob-util';
 import { Router } from '@angular/router';
 import { AuthlogicService } from 'src/app/service/authlogic.service';
+import { ToastService } from 'src/app/service/toast.service';
 @Component({
   selector: 'app-frlogin',
   templateUrl: './frlogin.component.html',
@@ -13,7 +14,7 @@ export class FrloginComponent implements OnInit {
   public localStream: any;
   public capture=true;
   public blobUrl:any;
-  constructor(public router:Router, public logic:AuthlogicService){}
+  constructor(public router:Router, public logic:AuthlogicService,public toast:ToastService){}
   ngOnInit(): void {
     this.streamVideo();
   }
@@ -67,5 +68,6 @@ export class FrloginComponent implements OnInit {
   })
   this.logic.login()
   this.router.navigate(['/main'])
+  this.toast.successalert('Login Success','Login status')
  }
 }
