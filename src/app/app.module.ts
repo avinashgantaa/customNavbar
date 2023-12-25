@@ -7,7 +7,7 @@ import { AuthService } from './service/auth.service';
 import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
