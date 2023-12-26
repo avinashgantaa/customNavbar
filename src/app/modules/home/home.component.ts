@@ -119,6 +119,11 @@ savechanges(){
   )
 }
 
+gotopostpage(){
+  this.postForm=true;
+  this.userForm.reset()
+}
+
 
 
 }

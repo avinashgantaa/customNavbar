@@ -74,7 +74,12 @@
           </ng-container>
           <ng-template #elseBlock>
             <form [formGroup]="userForm">
+              <div class="displaybetween">
                 <h2>Edit form</h2>
+                <button mat-icon-button color="primary" (click)="gotopostpage()">
+                  <mat-icon>chevron_left</mat-icon>
+                </button>
+              </div>
                 <mat-form-field appearance="outline" class="w-100">
                   <mat-label>UserName</mat-label>
                   <input
@@ -161,7 +166,7 @@
                             <td>{{user.email}}</td>
                             <td>{{user.phone}}</td>
                             <td>{{user.dob}} || {{user.age}}</td>
-                            <td>{{user.gender}}</td>
+                            <td>{{user.gender|gender}}</td>
                             <td>
                                 <button mat-icon-button color="primary" (click)="edit(user)">
                                     <mat-icon>edit</mat-icon>

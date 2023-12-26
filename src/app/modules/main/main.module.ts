@@ -9,6 +9,7 @@ import { TopnavComponent } from '../topnav/topnav.component';
 import { SettingsComponent } from '../settings/settings.component';
 import { DatabaseService } from 'src/app/service/database.service';
 import { NumberDirective } from 'src/app/directives/number.directive';
+import { GenderPipe } from 'src/app/pipes/gender.pipe';
 @NgModule({
   declarations: [
     MainComponent,
@@ -16,7 +17,8 @@ import { NumberDirective } from 'src/app/directives/number.directive';
     HomeComponent,
     TopnavComponent,
     SettingsComponent,
-    NumberDirective
+    NumberDirective,
+    GenderPipe
   ],
   imports: [
     CommonModule,
