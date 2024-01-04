@@ -1,0 +1,103 @@
+{
+  "students": [
+    {
+      "username": "avinash",
+      "email": "avinash.ganta39@gmail.com",
+      "phone": 8309323413,
+      "date": "16-05-1991",
+      "language": "Telugu",
+      "gender": "Male",
+      "id": 1
+    },
+    {
+      "username": "ajay",
+      "email": "ajay@gmail.com",
+      "phone": 7702126578,
+      "date": "14-08-1996",
+      "language": "Telugu",
+      "gender": "Male",
+      "id": 2
+    },
+    {
+      "username": "mounika",
+      "email": "mounika@gmail.com",
+      "phone": 8981234567,
+      "date": "12-05-1995",
+      "language": "English",
+      "gender": "Female",
+      "id": 3
+    },
+    {
+      "username": "vivek",
+      "email": "vivek@gmail.com",
+      "phone": 7878921345,
+      "date": "14-02-1996",
+      "language": "Telugu",
+      "gender": "Male",
+      "id": 4
+    },
+    {
+      "username": "vijay",
+      "email": "vijay@gmail.com",
+      "phone": 8989543678,
+      "date": "15-05-1978",
+      "language": "Tamil",
+      "gender": "Male",
+      "id": 5
+    },
+    {
+      "username": "vikas",
+      "email": "vikas@gmail.com",
+      "phone": 9441345698,
+      "date": "15-07-1998",
+      "language": "Telugu",
+      "gender": "Male",
+      "id": 6
+    },
+    {
+      "username": "harika",
+      "email": "harika@gmail.com",
+      "phone": 8987654666,
+      "date": "15-01-1995",
+      "language": "Telugu",
+      "gender": "Female",
+      "id": 7
+    },
+    {
+      "username": "prasanna",
+      "email": "prasanna@gmail.com",
+      "phone": 7686965648,
+      "date": "12-02-1994",
+      "language": "Telugu",
+      "gender": "Female",
+      "id": 8
+    },
+    {
+      "username": "swathi",
+      "email": "swathi@gmail.com",
+      "phone": 7686764567,
+      "date": "12-07-1994",
+      "language": "Telugu",
+      "gender": "Female",
+      "id": 9
+    },
+    {
+      "username": "mahesh",
+      "email": "mahesh@gmail.com",
+      "phone": 9878654567,
+      "date": "15-03-1993",
+      "language": "Telugu",
+      "gender": "Male",
+      "id": 10
+    },
+    {
+      "username": "pavan",
+      "email": "pavan@gmail.com",
+      "phone": 8984567890,
+      "date": "12-03-1993",
+      "language": "Telugu",
+      "gender": "Male",
+      "id": 11
+    }
+  ]
+}

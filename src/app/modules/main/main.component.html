@@ -1,0 +1,204 @@
+<div class="page">
+  <div class="row p-4">
+    <div class="col-6">
+      <mat-card>
+        <mat-card-content>
+          <form #userForm="ngForm">
+            <h2 class="text-center">Template Form</h2>
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>username</mat-label>
+              <input
+                matInput
+                type="text"
+                placeholder="Enter your name"
+                name="username"
+                ngModel
+                required
+              />
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>email</mat-label>
+              <input
+                matInput
+                type="email"
+                placeholder="Enter your email"
+                name="email"
+                ngModel
+                required
+                
+              />
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>phone</mat-label>
+              <input
+                matInput
+                type="number"
+                placeholder="Enter your phone number"
+                name="phone"
+                appPhone
+                ngModel
+                required
+              />
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Choose date</mat-label>
+              <input
+                [matDatepicker]="picker"
+                matInput
+                name="date"
+                [ngModel]="defaultDate"
+              />
+              <mat-datepicker-toggle
+                [for]="picker"
+                matIconSuffix
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div ngbDropdown class="mb-4">
+              <button
+                type="button"
+                ngbDropdownToggle
+                class="btn btn-outline-secondary dropdownbutton"
+              >
+                {{ language || "Choose one" }}
+              </button>
+              <div ngbDropdownMenu>
+                <button
+                  type="button"
+                  ngbDropdownItem
+                  (click)="selectlanguage('Telugu')"
+                >
+                  Telugu
+                </button>
+                <button
+                  type="button"
+                  ngbDropdownItem
+                  (click)="selectlanguage('Tamil')"
+                >
+                  Tamil
+                </button>
+                <button
+                  type="button"
+                  ngbDropdownItem
+                  (click)="selectlanguage('English')"
+                >
+                  English
+                </button>
+                <button
+                  type="button"
+                  ngbDropdownItem
+                  (click)="selectlanguage('Hindi')"
+                >
+                  Hindi
+                </button>
+                <button
+                  type="button"
+                  ngbDropdownItem
+                  (click)="selectlanguage('Kannada')"
+                >
+                  Kannada
+                </button>
+                <button
+                  type="button"
+                  ngbDropdownItem
+                  (click)="selectlanguage('Malayalam')"
+                >
+                  Malayalam
+                </button>
+              </div>
+            </div>
+            <mat-form-field class="language">
+              <mat-label>language</mat-label>
+              <input
+                type="text"
+                matInput
+                name="language"
+                [ngModel]="language"
+              />
+            </mat-form-field>
+            <h4>Gender</h4>
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                name="gender"
+                value="Male"
+                [(ngModel)]="gender"
+              />
+              <label class="form-check-label">Male</label>
+            </div>
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                name="gender"
+                value="Female"
+                [(ngModel)]="gender"
+              />
+              <label class="form-check-label">Female</label>
+            </div>
+            <div>
+              <button [disabled]="!userForm.valid"
+                mat-flat-button
+                type="submit"
+                (click)="onSubmit()"
+                color="primary"
+              >
+                submit
+              </button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-6">
+      <mat-card [ngClass]="{'matcard':showSpinner===true}" >
+        <mat-card-content>
+          <ng-container *ngIf="showSpinner===true;else tableSpinnerBlock">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>phone</th>
+                  <th>DOB(dd-mm-yyyy)</th>
+                  <th>gender</th>
+                  <th>language</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let x of allUsers; let i=index">
+                  <td>{{x.username}}</td>
+                  <td>{{x.email}}</td>
+                  <td>{{x.phone}}</td>
+                  <td>{{x.date}}</td>
+                  <td>{{x.gender | gender}}</td>
+                  <td>{{x.language}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </ng-container>
+          <ng-template #tableSpinnerBlock>
+            <h2 class="text-center">Table part loading...</h2>
+            <div class="displaycenter">
+              <mat-spinner></mat-spinner>
+            </div>
+          </ng-template>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="mt-4">
+        <mat-card-content>
+          <ng-container *ngIf="showSpinner===true; else elseBlock">
+            <app-charts [chartOptions]="chartOptions" [chartData]="chartData"></app-charts>
+          </ng-container>
+          <ng-template #elseBlock>
+            <h2 class="text-center">Graphical part loading...</h2>
+            <div class="displaycenter">
+              <mat-spinner></mat-spinner>
+            </div>
+          </ng-template>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
