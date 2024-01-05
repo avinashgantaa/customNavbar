@@ -1,7 +1,7 @@
 <div class="page">
-  <div class="row p-4">
+  <div class="row p-4 g-0">
     <div class="col-6">
-      <mat-card>
+      <mat-card class="me-2">
         <mat-card-content>
           <form #userForm="ngForm">
             <h2 class="text-center">Template Form</h2>
@@ -152,10 +152,10 @@
       </mat-card>
     </div>
     <div class="col-6">
-      <mat-card [ngClass]="{'matcard':showSpinner===true}" >
+      <mat-card [ngClass]="{'matcard':showSpinner===true}" class="ms-2">
         <mat-card-content>
           <ng-container *ngIf="showSpinner===true;else tableSpinnerBlock">
-            <table class="table">
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -186,7 +186,7 @@
           </ng-template>
         </mat-card-content>
       </mat-card>
-      <mat-card class="mt-4">
+      <mat-card class="mt-4 ms-2">
         <mat-card-content>
           <ng-container *ngIf="showSpinner===true; else elseBlock">
             <app-charts [chartOptions]="chartOptions" [chartData]="chartData"></app-charts>
