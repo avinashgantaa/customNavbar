@@ -7,6 +7,7 @@ import { AuthlogicService } from 'src/app/service/authlogic.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent{
+  public expand=false
   public userphoto:any;
   public username:any
   constructor(public router:Router, public logic:AuthlogicService){}
@@ -14,6 +15,9 @@ export class MainComponent{
   onLogout(){
     this.logic.logout()
     this.router.navigate(['/'])
+  }
+  sidenavexpand(){
+    this.expand=!this.expand;
   }
 
 }

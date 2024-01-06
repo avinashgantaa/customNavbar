@@ -1,5 +1,11 @@
 <div class="page d-flex">
-  <div class="sidenav">
+  <div class="sidenav" [ngClass]="{'sidenavexpand':expand===true}">
+    <button mat-flat-button color="primary" (click)="sidenavexpand()" class="expandbutton" *ngIf="!expand">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+    <button mat-flat-button color="primary" (click)="sidenavexpand()" class="expandbutton" *ngIf="expand">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
     <ul class="sidenavul">
       <li>
         <a [routerLink]="['/main/home']" routerLinkActive="active">

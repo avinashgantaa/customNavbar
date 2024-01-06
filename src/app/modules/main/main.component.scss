@@ -32,11 +32,21 @@ a.active{
     }
 }
 .sidenav:hover{
-    width: 15rem;
-    a .menuNames{
-        display: inline-block;
+    .expandbutton{
+        display: block;
     }
 }
+    .sidenavexpand{
+        width: 15rem;
+        a .menuNames{
+            display: inline-block;
+        }
+        .expandbutton{
+            position: absolute;
+            top: 0;
+            left: 13rem;
+        }
+    }
 
 .logoutlist{
     position: absolute;
@@ -45,4 +55,13 @@ a.active{
 }
 .maincontent{
     width: 100%;
+}
+.expandbutton{
+    position: absolute;
+    top: 0rem;
+    left: 3.8rem;
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    display: none;
+    
 }
